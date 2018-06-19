@@ -1,7 +1,8 @@
+<#macro page>
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Element</title>
+    <title>Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -10,24 +11,8 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8 col-md-6">
-            <br>
-            <br>
-<ul class="list-group">
+    <#nested>
 
-
-
-            {{#currentMessage}}
-                <li class="list-group-item"> {{content}}</li>
-            </ul>
-                {{/currentMessage}}
-
-
-
-
-        </div><!--End col-sm-md-->
-    </div><!--End row-->
 </div><!--End container-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -40,3 +25,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+</#macro>
