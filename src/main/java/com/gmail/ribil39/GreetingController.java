@@ -5,9 +5,7 @@ import com.gmail.ribil39.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -38,10 +36,24 @@ public class GreetingController {
         return "admin";
     }
 
+   /* @GetMapping("{slug}")
+    public String watchSlug(@PathVariable Message message, Map<String, Object> model) {
+        model.addAttribute("currentMessage", messageRepo.findBySlug(slug));
+        return "element";
+    }*/
+
+    @RequestMapping(value = "element/{slug}", method = RequestMethod.GET)
+    public String watchSlug(Model model, @PathVariable("slug") String slug) {
+        model.addAttribute("currentMessage", messageRepo.findBySlug(slug));
+
+        return "element";
+    }
+
 
         @PostMapping
-        public String add(@RequestParam String content, Map < String, Object > model){
-            Message message = new Message(content);
+        public String add(@RequestParam String content, @RequestParam String title,
+                          @RequestParam String slug, Map < String, Object > model){
+            Message message = new Message(content, title, slug);
             messageRepo.save(message);
 
             Iterable<Message> messages = messageRepo.findAll();

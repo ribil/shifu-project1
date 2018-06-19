@@ -14,11 +14,21 @@ public class Message {
 
     private String content;
 
+    private String title;
+
+    private String slug;
+
     public Message() {
     }
 
     public Message(String content) {
         this.content = content;
+    }
+
+    public Message(String content, String title, String slug) {
+        this.content = content;
+        this.title = title;
+        this.slug = slug;
     }
 
     public Integer getId() {
@@ -35,6 +45,22 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 }
 

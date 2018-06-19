@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Admin</title>
+    <title>Element</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -11,39 +11,19 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-8 col-md-6">
             <br>
             <br>
-            <form method="post">
-                <div class="input-group mb-3">
+<ul class="list-group">
 
-                    <input type="content" class="form-control" name="content" placeholder="Add content"
-                           aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-dark" type="submit">Add</button>
-                    </div>
 
-                </div>
-            </form>
 
-            <!-- <form method="post">
-                 <div class="form-group">
-                     <label for="AddContent">Add content</label>
-                     <input type="content" class="form-control" name="content"/>
-                 </div>
-                 <button type="submit" class="btn btn-primary">Add</button>
-             </form>-->
-
-            <br>
-            <br>
-
-            <h5>Content list:</h5>
-            <ul class="list-group">
-
-                {{#messages}}
-                    <li class="list-group-item">{{content}}</li>
-                {{/messages}}
+            {{#currentMessage}}
+                <li class="list-group-item"> {{content}}</li>
             </ul>
+                {{/currentMessage}}
+
+
 
 
         </div><!--End col-sm-md-->
