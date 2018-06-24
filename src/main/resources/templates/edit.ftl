@@ -10,15 +10,16 @@
 
             <br>
             <h5>Редактировать статью</h5>
-            <form method="post" action="edit">
+            <form method="post" action="/editArticle">
                 <div class="input-group mb-3">
-
+                    <input type="hidden" class="form-control" name="id"
+                           value="${message.id}">
                     <input type="content" class="form-control" name="content"
-                           value="${message.content}" aria-describedby="basic-addon2">
+                           value="${message.content}">
                     <input type="title" class="form-control" name="title"
-                           value="${message.title}" aria-describedby="basic-addon2">
+                           value="${message.title}">
                     <input type="slug" class="form-control" name="slug"
-                           value="${message.slug}" aria-describedby="basic-addon2">
+                           value="${message.slug}">
                     <div class="input-group-append">
                         <button class="btn btn-dark" type="submit">Сохранить</button>
                     </div>

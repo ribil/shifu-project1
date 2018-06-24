@@ -5,7 +5,6 @@ import com.gmail.ribil39.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -23,13 +22,6 @@ public class MainController {
         return "index";
     }
 
-    /*@GetMapping
-    public String main(Map<String, Object> model) {
-        Iterable<Message> messages = messageRepo.findAll();
-        model.put("messages", messages);
-        return "main";
-    }*/
-
     @GetMapping("/admin")
     public String admin() {
         return "admin";
@@ -41,12 +33,6 @@ public class MainController {
         model.put("messages", messages);
         return "articles";
     }
-
-   /* @GetMapping("{slug}")
-    public String watchSlug(@PathVariable Message message, Map<String, Object> model) {
-        model.addAttribute("currentMessage", messageRepo.findBySlug(slug));
-        return "element";
-    }*/
 
     @RequestMapping(value = "/admin/articles/{slug}", method = RequestMethod.GET)
     public String watchSlug(Model model, @PathVariable("slug") String slug) {
@@ -82,24 +68,16 @@ public class MainController {
         return "edit";
     }
 
-    @RequestMapping(value="/admin/articles/edit/save",method = RequestMethod.POST)
-    public String edit(@ModelAttribute ("message") Message message) {
+    @PostMapping("editArticle")
+    public String edit(@RequestParam Integer id, @RequestParam String content, @RequestParam String title,
+                       @RequestParam String slug, @ModelAttribute ("message") Message message) {
+        message.setId(id);
+        message.setContent(content);
+        message.setSlug(slug);
+        message.setTitle(title);
         messageRepo.save(message);
         return "redirect:/admin/articles";
     }
-
-   /* @RequestMapping(value="/admin/articles/edit/save",method = RequestMethod.POST)
-    public String editSave(@ModelAttribute("articleForm") Article article, BindingResult bindingResult){
-        articleEditValidator.validate(article, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "admin/edit";
-        }
-
-        articleService.save(article);
-        return "redirect:/admin/articles";
-    }*/
-
 
 }
 
