@@ -7,15 +7,8 @@
             <br>
 <ul class="list-group">
 
-
-
-
                 <li class="list-group-item"> ${currentMessage.content}</li>
             </ul>
-
-
-
-
 
         </div><!--End col-sm-md-->
     </div><!--End row-->
