@@ -20,6 +20,8 @@
                            value="${message.title}">
                     <input type="slug" class="form-control" name="slug"
                            value="${message.slug}">
+
+                    <input type="hidden" name="_csrf" value="${_csrf.token}" />
                     <div class="input-group-append">
                         <button class="btn btn-dark" type="submit">Сохранить</button>
                     </div>

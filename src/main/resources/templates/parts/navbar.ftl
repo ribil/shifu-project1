@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/admin">Главная</span></a>
+                <a class="nav-link" href="/">Главная</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/articles">Статьи</a>

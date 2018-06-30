@@ -9,6 +9,7 @@
                aria-describedby="basic-addon2">
         <input type="slug" class="form-control" name="slug" placeholder="Slug"
                aria-describedby="basic-addon2">
+        <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <div class="input-group-append">
             <button class="btn btn-dark" type="submit">Добавить</button>
         </div>

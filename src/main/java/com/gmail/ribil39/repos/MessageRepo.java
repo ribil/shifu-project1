@@ -10,7 +10,9 @@ public interface MessageRepo extends CrudRepository<Message, Long> {
 
     Message findById(Integer id);
 
+
+
     @Transactional
     void deleteBySlug(String s);
 
-  }
+}

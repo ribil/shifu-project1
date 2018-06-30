@@ -1,10 +1,21 @@
 <#import "parts/common.ftl" as c>
 <#import "parts/navbar.ftl" as n>
+<#import "parts/login.ftl" as l>
 
 <@c.page>
     <div class="row">
            <@n.navbar "/navbar" />
+
+
         <div class="col-sm-8 col-md-6">
+    <p><@l.logout /></p>
+
+
+
+       <#-- <div class="col-sm-8 col-md-6">
+            <form action="/logout" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>-->
             <br>
             <h5>Все статьи</h5>
             <ul class="list-group">
